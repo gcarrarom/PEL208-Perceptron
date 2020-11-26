@@ -66,8 +66,8 @@ class Perceptron(object):
                     convergence = True
             else:
                 tolerable = 0
-                previous_error = error_rate
 
+            previous_error = error_rate
             iter_count += 1
         self.epochs_ran = iter_count
 
