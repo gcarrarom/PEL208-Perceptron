@@ -8,7 +8,7 @@ class Perceptron(object):
     THis is the class used to classify the data using a perceptron
     '''
 
-    def __init__(self, tolerance=1e-4, learning_rate=1e-2, max_iter=1000):
+    def __init__(self, tolerance=1e-4, learning_rate=1e-2, max_iter=100):
         '''
         This initializes the Perceptron class with the tolerance to be used in the weight calculation
 
