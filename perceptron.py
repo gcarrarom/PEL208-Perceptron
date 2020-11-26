@@ -1,5 +1,7 @@
 import numpy as np
 from copy import deepcopy
+from sklearn.preprocessing import normalize
+
 
 class Perceptron(object):
     '''
@@ -30,9 +32,11 @@ class Perceptron(object):
         if not self.synapse_array:
             self.synapse_array = np.zeros(len(dataset[0]))
 
+        dataset = normalize(dataset, axis=1, norm='l1')
+
         convergence = False
         iter_count = 0
-        while iter_count < self.max_iter and not convergence: 
+        while iter_count < self.max_iter: # and not convergence: Didn't work... Weird.
             # for each row of data
             convergence = True
             for dataset_row, output in zip(dataset, expected_output):
