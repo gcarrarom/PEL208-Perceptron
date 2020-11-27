@@ -8,7 +8,7 @@ class Perceptron(object):
     THis is the class used to classify the data using a perceptron
     '''
 
-    def __init__(self, tolerance=1e-4, learning_rate=1e-2, max_iter=100, tolerable_iters=6):
+    def __init__(self, tolerance=1e-4, learning_rate=1e-1, max_iter=100, tolerable_iters=6):
         '''
         This initializes the Perceptron class with the tolerance to be used in the weight calculation
 
@@ -31,7 +31,7 @@ class Perceptron(object):
         '''
         # Initializing synapse_table
         if not self.synapse_array:
-            self.synapse_array = np.zeros(len(dataset[0]))
+            self.synapse_array = np.random.random((len(dataset[0]),))
 
         dataset = normalize(dataset, axis=1, norm='l1')
 
